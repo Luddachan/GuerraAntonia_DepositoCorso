@@ -41,6 +41,7 @@ print ("Il totale delle copie disponibili è:", totale_copie)
 #con range possiamo aggiungere nuovi fumetti
 #----------------------------------------
 
+#qui non sono sicurissima
 #for i in range (1, 5):
     #nuovo_titolo = input(f"Fumetto {i}")
     #fumetti.append(nuovo_titolo, 1)
@@ -77,6 +78,7 @@ if not trovato:
 
 #creiamo la lista vuota di appoggio
 fumetti_pochi = []
+
 
 for titolo, copie in fumetti:
     if copie < 2:
