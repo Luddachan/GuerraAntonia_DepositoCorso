@@ -41,7 +41,9 @@ print ("Il totale delle copie disponibili è:", totale_copie)
 #con range possiamo aggiungere nuovi fumetti
 #----------------------------------------
 
-#for i in range (1, 5)
+#for i in range (1, 5):
+    #nuovo_titolo = input(f"Fumetto {i}")
+    #fumetti.append(nuovo_titolo, 1)
     
 
 #------------------------
