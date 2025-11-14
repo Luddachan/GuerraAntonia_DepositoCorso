@@ -70,3 +70,16 @@ while True:
 #quando non troviamo il fumetto
 if not trovato:
     print("Fumetto non presente")
+    
+#----------------------
+# fumetti con meno di due copie
+#----------------------
+
+#creiamo la lista vuota di appoggio
+fumetti_pochi = []
+
+for titolo, copie in fumetti:
+    if copie < 2:
+        fumetti_pochi.append(titolo)
+
+print ("Fumetti con meno di 2 copie: ", fumetti_pochi)
