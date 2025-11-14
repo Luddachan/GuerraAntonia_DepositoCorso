@@ -9,33 +9,42 @@
 #----------------------------------
 
 # ogni fumetto è gestito da tuple così da non poter essere modificati (nome, num copie)
-fumetti = [
-    ("Dragon Ball", 5)
-    ("One Piece", 1)
-    ("Topolino", 8)
-    ("Batman", 2)
-    ("Superam", 15)
-    ("I diari della speziale", 7)
-    ("Slam Dunk", 10)
-    
-]
+def crea_lista_fumetti():
+    fumetti = [
+        ("Dragon Ball", 5)
+        ("One Piece", 1)
+        ("Topolino", 8)
+        ("Batman", 2)
+        ("Superam", 15)
+        ("I diari della speziale", 7)
+        ("Slam Dunk", 10)
+        
+    ]
+    return fumetti
+
 
 # lista vuota dove metteremo i titoli
+def fumetti_3_opiu(fumetti):
+    fumetti_3opiu = []      
+    # cicliamo su ogni tupla della lista
+    for titolo, copie in fumetti:
+        # controlliamo la condizione
+        if copie >= 3: 
+            # aggiungiamo solo il titolo     
+            fumetti_3opiu.append(titolo)
+    print("Fumetti con almeno 3 copie: ", fumetti)  
+    return fumetti_3opiu
 
-fumetti_3opiu = []      
-# cicliamo su ogni tupla della lista
-for titolo, copie in fumetti:
-    # controlliamo la condizione
-    if copie >= 3: 
-        # aggiungiamo solo il titolo     
-        fumetti_3opiu.append(titolo)
-print("Fumetti con almeno 3 copie: ", fumetti)  
 
+#--------------------------------
 #vogliamo calcolare il totale delle copie
-
-for titolo, copie in fumetti:
-    totale_copie += copie
-print ("Il totale delle copie disponibili è:", totale_copie)
+#--------------------------------
+def calcola_copie(fumetti):
+    totale = 0
+    for titolo, copie in fumetti:
+        totale_copie += copie
+    #print ("Il totale delle copie disponibili è:", totale_copie) ---> nella funzione credo non serva
+    return totale
 
 #----------------------------------------
 #con range possiamo aggiungere nuovi fumetti
@@ -50,38 +59,44 @@ print ("Il totale delle copie disponibili è:", totale_copie)
 #------------------------
 #cerchiamo un fumetto inserito dall'utente
 #------------------------
-while True:
-    ricerca = input ("Inserisci un fumetto, altrimenti scrivi esci: ")
-    #uscita per l'utente
-    if ricerca.lower() == "esci":
-        print("Arrivederci!")
-        break #interrompe il programma altrimenti il while andrebbe all'infinito
+
+def cerca_fumetto(fumetti):
+    while True:
+        ricerca = input ("Inserisci un fumetto, altrimenti scrivi esci: ")
+        #uscita per l'utente
+        if ricerca.lower() == "esci":
+            print("Arrivederci!")
+            break #interrompe il programma altrimenti il while andrebbe all'infinito
+        
+        #settiamo una condizione a falso perchè il fumetto non è stato ancora trovato
+        trovato = False 
+
+        #ricerca del fumetto con il for
+        for titolo, copie in fumetti:
+            #lower perchè così ignora se l'utente da lettere maiuscole o minuscole
+            if titolo.lower() == ricerca.lower():
+                print(f"{titolo} presente con {copie} copie nella collezione.")
+                trovato = True #settiamo a true perchè qui abbiamo delle condizioni
+                break #ferma il ciclo
     
-    #settiamo una condizione a falso perchè il fumetto non è stato ancora trovato
-    trovato = False 
 
-    #ricerca del fumetto con il for
-    for titolo, copie in fumetti:
-        #lower perchè così ignora se l'utente da lettere maiuscole o minuscole
-        if titolo.lower() == ricerca.lower():
-            print(f"{titolo} presente con {copie} copie nella collezione.")
-            trovato = True #settiamo a true perchè qui abbiamo delle condizioni
-            break #ferma il ciclo
-
-#quando non troviamo il fumetto
-if not trovato:
-    print("Fumetto non presente")
+    #quando non troviamo il fumetto
+    if not trovato:
+        print("Fumetto non presente")
     
 #----------------------
 # fumetti con meno di due copie
 #----------------------
 
 #creiamo la lista vuota di appoggio
-fumetti_pochi = []
+def poche_copie(fumetti):
+
+    fumetti_pochi = []
 
 
-for titolo, copie in fumetti:
-    if copie < 2:
-        fumetti_pochi.append(titolo)
+    for titolo, copie in fumetti:
+        if copie < 2:
+            fumetti_pochi.append(titolo)
 
-print ("Fumetti con meno di 2 copie: ", fumetti_pochi)
+    print ("Fumetti con meno di 2 copie: ", fumetti_pochi)
+    return fumetti_pochi
