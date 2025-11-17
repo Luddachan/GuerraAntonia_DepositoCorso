@@ -6,13 +6,13 @@
 class Ristorante:
     def __init__(self, nome, tipo_cucina):
         self.nome = nome
-        self.cucina = tipo_cucina
+        self.tipo_cucina = tipo_cucina
         self.aperto = False  # Ristorante chiuso di default
         self.menu = []  # Lista vuota per il menu
     
     #funzione per descrivere il ristorante
     def descrivi_ristorante(self):
-        print(f"{self.nome} - Cucina:{self.cucina}")
+        print(f"{self.nome} - Cucina:{self.tipo_cucina}")
     
     #funzione per stato del ristorante
     def stato_ristorante(self):
@@ -67,5 +67,5 @@ class Ristorante:
         
         #for per scorrere i piatti nel menu 
         for piatto, prezzo in self.menu:
-            print(f"-Piatto{piatto}: €{prezzo:}") """
+            print(f"-Piatto{piatto}:  €{prezzo:}") """
             
