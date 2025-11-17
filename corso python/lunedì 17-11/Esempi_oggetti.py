@@ -12,7 +12,7 @@ class Automobile:
 	    print("l'automobile è una", self.marca, self.modello)
     def __str__(self):
         return f"Automobile(nome ={self.nome}, eta={self.eta})"
- 
+
  
 #self è il nome dell'oggetto
 # crea un oggetto di automobile

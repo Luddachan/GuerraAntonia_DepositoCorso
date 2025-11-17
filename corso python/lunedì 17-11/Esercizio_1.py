@@ -8,7 +8,7 @@ class Punto:
         self.dx += dx 
         self.sx += sx
     def distanza_da_origine(self):
-        
+        pass
 #trovata su internet 
 #return math.sqrt(self.x**2 + self.y**2)
         
