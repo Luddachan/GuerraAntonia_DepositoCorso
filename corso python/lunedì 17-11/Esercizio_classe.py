@@ -68,5 +68,4 @@ class Ristorante:
         #for per scorrere i piatti nel menu 
         for piatto, prezzo in self.menu:
             print(f"-Piatto{piatto}: €{prezzo:}") """
-    
-    
+            
