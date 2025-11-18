@@ -1,4 +1,5 @@
 class Libro ():
+    #insieriamo il numero di parametri
     def __init__(self, nome, autore, isbn):
         self.nome = nome 
         self.autore = autore
