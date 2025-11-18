@@ -49,3 +49,6 @@ class AutomobileSportiva(Veicolo, DotazioniSpeciali):
         self.mostra_dotazioni()
         #possiamo chiamare i metodi di entrambe le superclassi
         
+auto_sportiva = AutomobileSportiva("Ferrari", "F8", ["Abs", "Controllo", "Trazioni", 720])
+auto_sportiva.mostra_informazioni()
+        
