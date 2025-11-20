@@ -58,10 +58,19 @@ def stampa_stipendi(lista_impiegati):
         # grazie al polimorfismo
         print(f"Stipendio mensile: {imp.calcola_stipendio()} €\n")
         
+# Impiegato fisso: stipendio invariato
+imp1 = ImpiegatoFisso("Mario", "Rossi", 1500)
+
+# Impiegato a provvigione:
+# base 1000 + 5% su 5000 € di vendite (250 €)
+imp2 = ImpiegatoAProvvigione("Luca", "Bianchi", 1000, vendite=5000, percentuale_bonus=0.05)
+
+# Lista degli impiegati
+impiegati = [imp1, imp2]
+
+# Stampa i risultati
+stampa_stipendi(impiegati)
+        
 
 
-def stampa_stipendi(lista_impiegati):
-    print("\n=== STIPENDI IMPIEGATI ===")
-    for imp in lista_impiegati:
-        print(f"Impiegato: {imp.info()}")
-        print(f"Stipendio mensile: {imp.calcola_stipendio()} €\n")
+
