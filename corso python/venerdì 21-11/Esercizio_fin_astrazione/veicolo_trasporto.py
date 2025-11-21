@@ -1,8 +1,5 @@
 from abc import ABC, abstractmethod
 
-# veicolo_trasporto.py
-from abc import ABC, abstractmethod
-
 class VeicoloTrasporto(ABC):
     """
     Classe astratta che rappresenta un veicolo generico per il trasporto merci.
